@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  font-family: "Courier New", monospace;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #0b0b0b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 320px;
+  position: relative;
+}
+
+.envelope {
+  width: 100%;
+  height: 190px;
+  background: #e83e8c;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.envelope::before,
+.envelope::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #d63384;
+}
+
+.envelope::before {
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+}
+
+.envelope::after {
+  clip-path: polygon(0 100%, 50% 55%, 100% 100%);
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: white;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  padding: 10px 14px;
+}
+
+.paper {
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  background: white;
+  padding: 22px;
+  border-radius: 6px;
+  animation: slideUp 0.9s ease forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.paper p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.signature {
+  margin-top: 18px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(220px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
